@@ -96,68 +96,166 @@ export default function Home() {
   return (
     <main>
       <nav className="nav">
-        <a className="brand" href="#home" onClick={close}>LS<span>.</span></a>
+        <a className="brand" href="#home" onClick={close}>
+          LS<span>.</span>
+        </a>
+
         <div className={`navlinks ${open ? "show" : ""}`}>
           {["About", "Experience", "Projects", "Skills", "Education", "Contact"].map(x =>
-            <a key={x} href={`#${x.toLowerCase()}`} onClick={close}>{x}</a>
+            <a key={x} href={`#${x.toLowerCase()}`} onClick={close}>
+              {x}
+            </a>
           )}
         </div>
-        <a className="nav-cta" href="#contact">Let's talk <ArrowUpRight size={15}/></a>
-        <button className="menu" onClick={() => setOpen(!open)} aria-label="Menu">
+
+        <a className="nav-cta" href="#contact">
+          Let's talk <ArrowUpRight size={15}/>
+        </a>
+
+        <button
+          className="menu"
+          onClick={() => setOpen(!open)}
+          aria-label="Menu"
+        >
           {open ? <X/> : <Menu/>}
         </button>
       </nav>
 
       <section id="home" className="hero section">
         <div className="grid-bg"/>
+
         <div className="hero-copy">
-          <div className="availability"><span/> Available for opportunities</div>
-          <p className="eyebrow">TEST & VALIDATION · TEST AUTOMATION · EMBEDDED SOFTWARE</p>
-          <h1>Engineering<br/><em>reliability</em> into<br/>every test.</h1>
-          <p className="lead">Polyvalent Computer Engineer working across aerospace and automotive systems, with a focus on embedded software, validation and test automation.</p>
+          <div className="availability">
+            <span/> Available for opportunities
+          </div>
+
+          <p className="eyebrow">
+            TEST & VALIDATION · TEST AUTOMATION · EMBEDDED SOFTWARE
+          </p>
+
+          <h1>
+            Engineering<br/>
+            <em>reliability</em> into<br/>
+            every test.
+          </h1>
+
+          <p className="lead">
+            Polyvalent Computer Engineer working across aerospace and automotive
+            systems, with a focus on embedded software, validation and test automation.
+          </p>
+
           <div className="hero-actions">
-            <a className="button primary" href="#experience">Explore my work <ArrowUpRight size={17}/></a>
-            <a className="button ghost" href="/LAMIS_SAIDI_EN_CV.pdf" target="_blank">View CV <Download size={16}/></a>
+            <a className="button primary" href="#experience">
+              Explore my work <ArrowUpRight size={17}/>
+            </a>
+
+            <a
+              className="button ghost"
+              href="/LAMIS_SAIDI_EN_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View CV <Download size={16}/>
+            </a>
           </div>
         </div>
+
         <div className="hero-orbit">
-          <div className="orbit o1"/><div className="orbit o2"/><div className="orbit o3"/>
-          <div className="core"><Cpu size={44}/><span>EMBEDDED<br/>SYSTEMS</span></div>
-          <span className="orb-label l1">PYTHON</span><span className="orb-label l2">C / C++</span><span className="orb-label l3">HIL</span>
+          <div className="orbit o1"/>
+          <div className="orbit o2"/>
+          <div className="orbit o3"/>
+
+          <div className="core">
+            <Cpu size={44}/>
+            <span>
+              EMBEDDED<br/>
+              SYSTEMS
+            </span>
+          </div>
+
+          <span className="orb-label l1">PYTHON</span>
+          <span className="orb-label l2">C / C++</span>
+          <span className="orb-label l3">HIL</span>
         </div>
-        <a className="scroll" href="#about">Scroll to discover <ChevronDown size={16}/></a>
+
+        <a className="scroll" href="#about">
+          Scroll to discover <ChevronDown size={16}/>
+        </a>
       </section>
 
       <section id="about" className="section about">
-        <div className="section-head"><span>01</span><h2>About me</h2></div>
+        <div className="section-head">
+          <span>01</span>
+          <h2>About me</h2>
+        </div>
+
         <div className="about-grid">
           <div>
-            <p className="big-copy">I build and validate <strong>embedded systems</strong> where reliability matters.</p>
+            <p className="big-copy">
+              I build and validate <strong>embedded systems</strong> where reliability matters.
+            </p>
           </div>
+
           <div className="about-text">
-            <p>My experience spans Test & Validation, Test Automation and Embedded Software across the automotive and aerospace industries.</p>
-            <p>I enjoy turning requirements into robust test scenarios, automating repetitive validation tasks, and building the software around a test bench that makes engineering teams faster and more confident.</p>
+            <p>
+              My experience spans Test & Validation, Test Automation and Embedded
+              Software across the automotive and aerospace industries.
+            </p>
+
+            <p>
+              I enjoy turning requirements into robust test scenarios, automating
+              repetitive validation tasks, and building the software around a test
+              bench that makes engineering teams faster and more confident.
+            </p>
+
             <div className="stats">
-              <div><strong>15+</strong><span>ATP tests integrated</span></div>
-              <div><strong>2</strong><span>Industry domains</span></div>
-              <div><strong>10–15</strong><span>Tickets / month</span></div>
+              <div>
+                <strong>15+</strong>
+                <span>ATP tests integrated</span>
+              </div>
+
+              <div>
+                <strong>2</strong>
+                <span>Industry domains</span>
+              </div>
+
+              <div>
+                <strong>10–15</strong>
+                <span>Tickets / month</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <section id="experience" className="section dark">
-        <div className="section-head"><span>02</span><h2>Experience</h2></div>
+        <div className="section-head">
+          <span>02</span>
+          <h2>Experience</h2>
+        </div>
+
         <div className="timeline">
           {experiences.map((e, i) => (
             <article className="exp" key={e.title}>
               <div className="exp-date">{e.date}</div>
-              <div className="exp-line"><span>{e.icon}</span></div>
+
+              <div className="exp-line">
+                <span>{e.icon}</span>
+              </div>
+
               <div className="exp-card">
                 <p className="domain">{e.domain}</p>
+
                 <h3>{e.title}</h3>
+
                 <p className="company">{e.company}</p>
-                <ul>{e.bullets.map(b => <li key={b}>{b}</li>)}</ul>
+
+                <ul>
+                  {e.bullets.map(b =>
+                    <li key={b}>{b}</li>
+                  )}
+                </ul>
+
                 <p className="tech">{e.tech}</p>
               </div>
             </article>
@@ -166,72 +264,219 @@ export default function Home() {
       </section>
 
       <section id="projects" className="section">
-        <div className="section-head"><span>03</span><h2>Selected work</h2></div>
-        <p className="section-intro">A few projects that represent how I approach embedded validation and automation.</p>
+        <div className="section-head">
+          <span>03</span>
+          <h2>Selected work</h2>
+        </div>
+
+        <p className="section-intro">
+          A few projects that represent how I approach embedded validation and automation.
+        </p>
+
         <div className="projects">
           {projects.map(p => (
             <article className="project" key={p.number}>
-              <div className="project-top"><span>{p.number}</span>{p.icon}</div>
+              <div className="project-top">
+                <span>{p.number}</span>
+                {p.icon}
+              </div>
+
               <h3>{p.title}</h3>
+
               <p>{p.description}</p>
-              <div className="tags">{p.tags.map(t => <span key={t}>{t}</span>)}</div>
-              <div className="project-arrow"><ArrowUpRight/></div>
+
+              <div className="tags">
+                {p.tags.map(t =>
+                  <span key={t}>{t}</span>
+                )}
+              </div>
+
+              <div className="project-arrow">
+                <ArrowUpRight/>
+              </div>
             </article>
           ))}
         </div>
       </section>
 
       <section id="skills" className="section skills dark">
-        <div className="section-head"><span>04</span><h2>Toolkit</h2></div>
+        <div className="section-head">
+          <span>04</span>
+          <h2>Toolkit</h2>
+        </div>
+
         <div className="skill-grid">
           {Object.entries(skills).map(([group, items]) => (
             <div className="skill-card" key={group}>
               <h3>{group}</h3>
-              <div className="tags">{items.map(x => <span key={x}>{x}</span>)}</div>
+
+              <div className="tags">
+                {items.map(x =>
+                  <span key={x}>{x}</span>
+                )}
+              </div>
             </div>
           ))}
         </div>
       </section>
 
       <section id="education" className="section">
-        <div className="section-head"><span>05</span><h2>Education & certifications</h2></div>
+        <div className="section-head">
+          <span>05</span>
+          <h2>Education & certifications</h2>
+        </div>
+
         <div className="edu-grid">
           <article className="edu-card">
             <GraduationCap size={25}/>
+
             <p className="date">2021 — 2024</p>
-            <h3>Engineering Degree in Computer Science — Embedded Systems</h3>
-            <p>ESPRIT — Private Higher School of Engineering and Technology</p>
-            <a href="https://esprit.tn/" target="_blank">Visit ESPRIT <ExternalLink size={14}/></a>
+
+            <h3>
+              Engineering Degree in Computer Science — Embedded Systems
+            </h3>
+
+            <p>
+              ESPRIT — Private Higher School of Engineering and Technology
+            </p>
+
+            <a
+              href="https://esprit.tn/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit ESPRIT <ExternalLink size={14}/>
+            </a>
           </article>
+
           <article className="edu-card">
             <GraduationCap size={25}/>
+
             <p className="date">2018 — 2021</p>
-            <h3>Preparatory Cycle for Engineering Studies — Technology</h3>
-            <p>IPEIEM — Preparatory Institute for Engineering Studies El Manar</p>
-            <a href="https://ipeiem.rnu.tn/" target="_blank">Visit IPEIEM <ExternalLink size={14}/></a>
+
+            <h3>
+              Preparatory Cycle for Engineering Studies — Technology
+            </h3>
+
+            <p>
+              IPEIEM — Preparatory Institute for Engineering Studies El Manar
+            </p>
+
+            <a
+              href="https://ipeiem.rnu.tn/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit IPEIEM <ExternalLink size={14}/>
+            </a>
           </article>
         </div>
+
         <div className="certs">
-          <div className="cert"><span>ISTQB</span><div><h3>Foundation Level — Version 4.0</h3><p>05/2026 · ISTQB</p></div></div>
-          <div className="cert"><span>NVIDIA</span><div><h3>Applications of AI for Anomaly Detection</h3><p>11/2023 · NVIDIA</p></div></div>
-          <div className="cert"><span>NVIDIA</span><div><h3>Applications of AI for Predictive Maintenance</h3><p>11/2023 · NVIDIA</p></div></div>
+
+          <div className="cert">
+            <span>ISTQB</span>
+
+            <div>
+              <h3>Foundation Level — Version 4.0</h3>
+
+              <p>05/2026 · ISTQB</p>
+
+              <a
+                href="https://app.skillsclub.com/credentials/MjE1MzU5LTI5YWYwNzBhM2U5MDYyMzRlMzFmMDIzNTA2ZjYzMWI0NzUxMmNhZWM2OGQ5NDJiN2U5N2JjZTQxY2JlNDAxYTkt/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Certificate <ExternalLink size={14}/>
+              </a>
+            </div>
+          </div>
+
+          <div className="cert">
+            <span>NVIDIA</span>
+
+            <div>
+              <h3>Applications of AI for Anomaly Detection</h3>
+
+              <p>11/2023 · NVIDIA</p>
+
+              <a
+                href="https://learn.nvidia.com/certificates?id=82c7adcf0728480aa2dc8fc8056a505b"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Certificate <ExternalLink size={14}/>
+              </a>
+            </div>
+          </div>
+
+          <div className="cert">
+            <span>NVIDIA</span>
+
+            <div>
+              <h3>Applications of AI for Predictive Maintenance</h3>
+
+              <p>11/2023 · NVIDIA</p>
+
+              <a
+                href="https://learn.nvidia.com/certificates?id=772dba4730084ab7aba3135cabaf7cb6"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Certificate <ExternalLink size={14}/>
+              </a>
+            </div>
+          </div>
+
         </div>
-        <p className="link-note">Certificate links can be added directly in <code>app/page.tsx</code> once you provide the exact certificate URLs.</p>
       </section>
 
       <section id="contact" className="contact section">
         <div className="contact-glow"/>
-        <div className="section-head"><span>06</span><h2>Let's connect</h2></div>
-        <h2 className="contact-title">Have a project or<br/><em>opportunity</em> in mind?</h2>
-        <p>I'm open to opportunities in Test & Validation, Test Automation and Embedded Software, especially in aerospace and automotive environments.</p>
-        <div className="contact-links">
-          <a href="mailto:ls.lamissaidi@gmail.com"><Mail size={18}/> ls.lamissaidi@gmail.com <ArrowUpRight size={16}/></a>
-          <a href="https://www.linkedin.com/in/lamis-saidi/" target="_blank"><LinkedinIcon/> LinkedIn <ArrowUpRight size={16}/></a>
+
+        <div className="section-head">
+          <span>06</span>
+          <h2>Let's connect</h2>
         </div>
-        <div className="location"><MapPin size={16}/> Ariana, Tunisia</div>
+
+        <h2 className="contact-title">
+          Have a project or<br/>
+          <em>opportunity</em> in mind?
+        </h2>
+
+        <p>
+          I'm open to opportunities in Test & Validation, Test Automation and
+          Embedded Software, especially in aerospace and automotive environments.
+        </p>
+
+        <div className="contact-links">
+          <a href="mailto:ls.lamissaidi@gmail.com">
+            <Mail size={18}/>
+            ls.lamissaidi@gmail.com
+            <ArrowUpRight size={16}/>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/lamis-saidi/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LinkedinIcon/>
+            LinkedIn
+            <ArrowUpRight size={16}/>
+          </a>
+        </div>
+
+        <div className="location">
+          <MapPin size={16}/>
+          Ariana, Tunisia
+        </div>
       </section>
 
-      <footer><span>© 2026 Lamis Saidi</span><span>Built for embedded reliability.</span></footer>
+      <footer>
+        <span>© 2026 Lamis Saidi</span>
+        <span>Built for embedded reliability.</span>
+      </footer>
     </main>
   );
 }
